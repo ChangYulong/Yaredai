@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     self.cTitle = @"下一页";
     
-    
+    NSLog(@"dd");
     
 }
 
