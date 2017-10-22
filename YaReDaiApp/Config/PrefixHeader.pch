@@ -1,0 +1,69 @@
+//
+//  PrefixHeader.pch
+//  YaReDaiApp
+//
+//  Created by Langmuir on 2017/10/19.
+//  Copyright © 2017年 Langmuir. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//定义预设颜色
+#define color_primary 0xdd0c18
+#define color_background 0xf5f5fa
+#define color_navigation_bg 0xffffff
+#define color_navigation_title 000000
+#define color_navigation_item_text 0xfcc58a
+#define color_tabbar_bg 0xffffff
+#define color_tabbar_text_hight 0xfbb200
+#define color_tabbar_text_normal 0x000000
+#define COLOR_splitline 0xe1e1e1
+
+#define KScreenWidth [UIScreen mainScreen].bounds.size.width
+#define KScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//所有控制器view背景颜色
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define BGColor RGBCOLOR(245, 245, 245)
+#define mainColor RGBCOLOR(17, 206, 165)
+
+//不同版本比例系数
+#define PROPORTION (KScreenWidth/320.00)
+#define PROPORTION6 (KScreenWidth/375.00)
+#define PROPORTION6P (KScreenWidth/414.00)
+
+#define kP(pt) (pt*PROPORTION)
+#define kP6(pt) (pt*PROPORTION6)
+#define kP6p(pt) (pt*PROPORTION6P)
+
+//轻量级弹框
+//#import "OLGhostAlertView.h"
+//#define GhostShow(msg) OLGhostAlertView * ghost = [[OLGhostAlertView alloc] initWithTitle:nil message:msg timeout:1 dismissible:YES];\
+//ghost.position = OLGhostAlertViewPositionCenter;\
+//[ghost show];
+
+//加载动画
+#import "PHActivityView.h"
+#define ActivityShow [[PHActivityView sharedInstance] show]
+#define ActivityHidden [[PHActivityView sharedInstance] hidden]
+
+//状态栏高度
+#define StatusHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+#define NavHeight (StatusHeight + 44)
+
+// 是否是iphoneX
+#define kIsIphoneX ([UIScreen mainScreen].bounds.size.height == 812 ? YES : NO)
+
+// tabbar高度
+#define kTabBarH (kIsIphoneX ? 83 : 49)
+
+
+#import "JSONModel.h"
+#import "AFNetworking.h"
+#import "MJRefresh.h"
+#import "MBProgressHUD+NJ.h"
+
+#import "UIColor+Extend.h"
+
+#endif /* PrefixHeader_pch */
